@@ -5,7 +5,7 @@ Rrdient directions is a program that gives you the most optimal directions for g
 
 ## Instructions
 
-Run rrdient-directions-rom.py () in Python 3:
+Run rrdient-directions-rom.py (not included) in Python 3:
 
 `$ python3 rrdient-directions-llrom.py`
 
