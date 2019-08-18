@@ -1,0 +1,38 @@
+The following commands are to be sent over remote sensors or mesh. For more informaiton, see the following articles:
+https://en.scratch-wiki.info/wiki/Remote_Sensors_Protocol
+https://en.scratch-wiki.info/wiki/Mesh
+https://en.scratch-wiki.info/wiki/Communicating_to_Scratch_via_Python
+
+You can send and recieve a broadcast or a sensor update. Sent sensor updates will do nothing in this case; they are only used to send you information. Broadcasts will have the same effect in program whether they are triggered in the program (and sent to you) or sent by you to the program.
+
+broadcasts you might recieve (but could also send if you want to trigger the action yourself):
+
+"start-directions" start directions
+"stop-directions" stop directions
+
+broadcasts you would only recieve:
+"speak" give a direction, now
+"variable-positions" which variables do you want to show or hide for options? see below.
+
+broadcasts you would only send:
+"scratch-startclicked" reset everything and start the program over (could be a good thing to run when you first connect to make sure you're on the same page)
+"left" turn left
+"right" turn right
+"left-exit" exit then turn left (highway mode only)
+"right-exit" exit then turn right (highway mode only)
+"uturn" make a u-turn
+(Run these not on or right after, scratch-startclicked but when you recieve "variable-positions".)
+"hide-uturn-parts" hide the "U-Turn Parts out of 50" option. Useful if you cannot control this in your backend.
+"hide-gaps" Hide the closest and largest gap options. Useful if you cannot control this in your backend.
+"hide-highway-durations" Hide the highway duration options. Useful if you cannot control this in your backend.
+"show-uturn-parts" Shows the "U-Turn Parts out of 50" option if it was hidden.
+"show-gaps" Likewise (see several above).
+"show-highway-durations" Likewise (see several above).
+
+
+sensor updates you'll recieve:
+"Largest Gap" setting the value of the longest time to wait between directions.
+"Closest Gap" setting the value of the shortest time to wait between directions.
+"Highway Duration Minimum" setting the value of the minimum amount of time to wait in highway mode before asking the user to exit.
+"Highway Duration Maximum" setting the value of the maximum amount of time to wait in highway mode before asking the user to exit.
+"U-Turn Parts out of 50" Requested chance out of 50 that any given turn will be a U-Turn.
